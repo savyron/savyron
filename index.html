@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Savyron Team</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#040405;--card:rgba(255,255,255,.035);--line:rgba(255,255,255,.09);--tx:#f4f4f7;--mut:#9b9bab;--ac:#8b5cf6;--ac2:#22d3ee;box-sizing:border-box}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--tx);font-family:Vazirmatn,Tahoma,sans-serif;line-height:1.9;overflow-x:hidden}
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden}
+.bg::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 75%);opacity:.5}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.45;animation:fl 14s ease-in-out infinite}
+.o1{width:420px;height:420px;background:#7c3aed;top:-80px;right:-60px}
+.o2{width:360px;height:360px;background:#0891b2;top:40vh;left:-100px;animation-delay:-5s}
+.o3{width:300px;height:300px;background:#c026d3;bottom:-80px;right:25%;animation-delay:-9s;opacity:.3}
+@keyframes fl{50%{transform:translate(30px,-40px) scale(1.12)}}
+.nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:30;display:flex;align-items:center;gap:6px;padding:7px 8px 7px 10px;border-radius:99px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);box-shadow:0 10px 40px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.18);max-width:calc(100vw - 20px)}
+.logo{font-weight:800;letter-spacing:1.5px;font-size:15px;padding:0 14px;white-space:nowrap}
+.logo b{color:var(--ac)}
+.nav a{color:var(--mut);text-decoration:none;font-size:14px;padding:7px 16px;border-radius:99px;transition:.25s;white-space:nowrap}
+.nav a:hover{color:#fff;background:rgba(255,255,255,.07)}
+.nav a.on{color:#fff;background:linear-gradient(135deg,rgba(139,92,246,.55),rgba(109,40,217,.35));box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 4px 18px rgba(139,92,246,.35)}
+.sep{width:1px;height:20px;background:var(--line)}
+section{padding:100px 6%;max-width:1100px;margin:auto}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding-top:130px}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--card);backdrop-filter:blur(10px);padding:5px 18px;border-radius:99px;color:var(--mut);font-size:13px;margin-bottom:26px}
+.badge i{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 rgba(52,211,153,.7);animation:pl 2s infinite}
+@keyframes pl{70%{box-shadow:0 0 0 9px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+h1{font-size:clamp(30px,6.2vw,64px);line-height:1.55;font-weight:800;max-width:900px}
+h1 em{font-style:normal;background:linear-gradient(90deg,#a78bfa,var(--ac2),#a78bfa);background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 6s linear infinite}
+@keyframes sh{to{background-position:200%}}
+.hero p{color:var(--mut);margin:22px 0 34px;max-width:560px}
+.row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 32px;border-radius:14px;background:linear-gradient(135deg,#8b5cf6,#6d28d9);color:#fff;text-decoration:none;font-weight:500;border:1px solid rgba(255,255,255,.2);cursor:pointer;font-family:inherit;font-size:15px;transition:.3s;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 8px 28px rgba(139,92,246,.35)}
+.btn:hover{transform:translateY(-3px);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 14px 38px rgba(139,92,246,.55)}
+.btn.g{background:rgba(255,255,255,.06);backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.15)}
+.btn.g:hover{background:rgba(255,255,255,.12);box-shadow:none}
+.tag{color:var(--ac2);font-size:13px;letter-spacing:2px;font-weight:500}
+h2{font-size:clamp(26px,4vw,38px);font-weight:800;margin:4px 0 8px}
+.lead{color:var(--mut);max-width:680px;margin:12px 0 42px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(235px,1fr))}
+.card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;transition:.35s;cursor:pointer;text-align:right;color:inherit;font-family:inherit;backdrop-filter:blur(10px)}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--x,50%) var(--y,0),rgba(139,92,246,.25),transparent 60%);opacity:0;transition:.3s}
+.card:hover::before{opacity:1}
+.card:hover{border-color:rgba(139,92,246,.6);transform:translateY(-8px);box-shadow:0 20px 50px rgba(139,92,246,.18)}
+.card>*{position:relative}
+.ic{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:24px;margin-bottom:14px;background:linear-gradient(135deg,rgba(139,92,246,.3),rgba(34,211,238,.15));border:1px solid var(--line)}
+.num{position:absolute!important;top:18px;left:22px;font-size:34px;font-weight:800;color:rgba(255,255,255,.06)}
+.card h3{font-size:19px;margin-bottom:2px}
+.card p{color:var(--mut);font-size:14px}
+.hint{font-size:12px;color:var(--ac);margin-top:12px;display:block;opacity:.8}
+.pl{display:grid;gap:18px}
+.proj{display:flex;gap:26px;align-items:center;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:32px;backdrop-filter:blur(10px);transition:.35s}
+.proj:hover{border-color:rgba(34,211,238,.5);box-shadow:0 20px 60px rgba(34,211,238,.1)}
+.proj .ico{font-size:44px;width:96px;height:96px;display:grid;place-items:center;border-radius:26px;background:linear-gradient(135deg,rgba(139,92,246,.35),rgba(34,211,238,.2));border:1px solid var(--line)}
+.proj .t{flex:1;min-width:220px}
+.proj h3{font-size:23px}
+.proj p{color:var(--mut)}
+.chip{display:inline-block;font-size:12px;padding:2px 12px;border-radius:99px;border:1px solid var(--line);color:var(--ac2);margin:8px 0 0 6px}
+.goal{background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(34,211,238,.06));border:1px solid var(--line);border-radius:28px;padding:40px;backdrop-filter:blur(10px)}
+.goal strong{display:block;margin-top:16px;font-size:18px;background:linear-gradient(90deg,#a78bfa,var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.fo{display:flex;gap:30px;align-items:center;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:34px;backdrop-filter:blur(10px)}
+.pf{width:120px;height:120px;border-radius:50%;padding:3px;background:conic-gradient(var(--ac),var(--ac2),var(--ac));flex:none}
+.pf div{width:100%;height:100%;border-radius:50%;background:#0b0b10;overflow:hidden}
+.pf svg{width:100%;height:100%;display:block}
+.fo .tx{flex:1;min-width:240px}
+.fo .nm{font-weight:800;font-size:18px;margin-bottom:4px}
+.fo p{color:var(--mut)}
+footer{text-align:center;color:var(--mut);padding:40px 6% 50px;border-top:1px solid var(--line);font-size:13px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(10px);display:none;place-items:center;z-index:50;padding:20px}
+.modal.on{display:grid}
+.box{background:rgba(18,18,24,.85);border:1px solid rgba(255,255,255,.14);border-radius:26px;padding:36px 30px;width:100%;max-width:380px;text-align:center;position:relative;animation:up .35s;box-shadow:0 30px 80px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.15)}
+@keyframes up{from{opacity:0;transform:translateY(30px) scale(.95)}}
+.box .pf{margin:0 auto 14px;width:116px;height:116px}
+.x{position:absolute;top:12px;left:16px;background:rgba(255,255,255,.07);border:0;color:var(--mut);font-size:22px;cursor:pointer;width:34px;height:34px;border-radius:50%}
+.slot{margin-top:12px;padding:10px;border:1px dashed var(--line);border-radius:14px;color:var(--mut);font-size:14px;direction:ltr}
+.js .rv{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s}
+.js .rv.in{opacity:1;transform:none}
+@media(max-width:620px){.nav{gap:2px;padding:6px}.logo{display:none}.sep{display:none}.nav a{padding:7px 11px;font-size:13px}section{padding:70px 6%}.goal,.fo,.proj{padding:24px}}
+</style>
+</head>
+<body>
+<div class="bg"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
+
+<nav class="nav">
+<div class="logo">SAVYRON<b>.</b></div><div class="sep"></div>
+<a href="#home" class="on">خانه</a><a href="#about">درباره ما</a><a href="#projects">پروژه‌ها</a><a href="#goal">هدف</a><a href="#founder">بنیان‌گذار</a>
+</nav>
+
+<section class="hero" id="home">
+<div class="badge"><i></i>Savyron Team</div>
+<h1>ما فقط وب‌سایت نمی‌سازیم؛ <em>ایده‌ها</em> رو به <em>تجربه‌های دیجیتال</em> تبدیل می‌کنیم.</h1>
+<p>تیمی چهار نفره با یک هدف: ساختن چیزهایی که ارزش استفاده دارند.</p>
+<div class="row"><a class="btn" href="#projects">دیدن پروژه‌ها ←</a><a class="btn g" href="#about">آشنایی با تیم</a></div>
+</section>
+
+<section id="about">
+<div class="rv"><span class="tag">ABOUT US</span><h2>درباره ما</h2>
+<p class="lead">Savyron از چهار نفر تشکیل شده؛ هر نفر یک حلقه از زنجیره‌ی ساخت. از جرقه‌ی ایده تا تحویل نهایی، همه‌چیز بین ما تقسیم شده تا خروجی تمیز و حرفه‌ای باشه.</p></div>
+<div class="grid">
+<button class="card rv" data-r="ایده‌پرداز" data-d="جرقه‌ی هر پروژه از اینجا شروع میشه."><span class="num">01</span><div class="ic">💡</div><h3>ایده‌پرداز</h3><p>ایده‌ها و مسیر پروژه‌ها رو مشخص می‌کنه.</p><span class="hint">مشاهده پروفایل</span></button>
+<button class="card rv" data-r="تولیدکننده محتوا" data-d="متن و محتوای سایت‌ها رو می‌سازه."><span class="num">02</span><div class="ic">✍️</div><h3>تولیدکننده محتوا</h3><p>محتوای سایت‌ها رو می‌نویسه و می‌سازه.</p><span class="hint">مشاهده پروفایل</span></button>
+<button class="card rv" data-r="توسعه‌دهنده" data-d="سایت‌ها رو کدنویسی و پیاده‌سازی می‌کنه."><span class="num">03</span><div class="ic">💻</div><h3>توسعه‌دهنده</h3><p>سایت‌ها رو از صفر می‌سازه و راه‌اندازی می‌کنه.</p><span class="hint">مشاهده پروفایل</span></button>
+<button class="card rv" data-r="کنترل کیفیت" data-d="پروژه‌ها رو قبل از انتشار بررسی می‌کنه."><span class="num">04</span><div class="ic">🛡️</div><h3>کنترل کیفیت</h3><p>پروژه‌ها رو بررسی و تست می‌کنه تا بی‌نقص بشن.</p><span class="hint">مشاهده پروفایل</span></button>
+</div>
+</section>
+
+<section id="projects">
+<div class="rv"><span class="tag">PROJECTS</span><h2>پروژه‌ها</h2><p class="lead">کارهایی که تا اینجا ساختیم.</p></div>
+<div class="pl"><div class="proj rv"><div class="ico">✈️</div><div class="t"><h3>وب‌اپ تلگرام</h3><p>یک وب‌اپ کاربردی که داخل تلگرام اجرا میشه.</p><span class="chip">Telegram Web App</span><span class="chip">Live</span></div><a class="btn" href="https://savyron.github.io/About-satar-x-one/" target="_blank" rel="noopener">مشاهده پروژه ↗</a></div><div class="proj rv"><div class="ico">🛍️</div><div class="t"><h3>فروشگاه StarX1</h3><p>سایت فروشگاهی مدرن و سریع با ظاهر حرفه‌ای.</p><span class="chip">Online Store</span><span class="chip">Live</span></div><a class="btn" href="https://savyron.github.io/starx1/" target="_blank" rel="noopener">مشاهده سایت ↗</a></div><div class="proj rv"><div class="ico">🤖</div><div class="t"><h3>ربات تلگرام StarX1</h3><p>یک ربات تلگرامی که به‌عنوان یکی از پروژه‌های تیم ساخته شده. آیدی: @StarX1_Bot</p><span class="chip">Telegram Bot</span><span class="chip">@StarX1_Bot</span></div><a class="btn" href="https://t.me/StarX1_Bot" target="_blank" rel="noopener">ورود به ربات ↗</a></div><div class="proj rv"><div class="ico">🏪</div><div class="t"><h3>فروشگاه کوهبنان</h3><p>فروشگاه اینترنتی کوهبنان؛ طراحی مدرن و تجربه‌ی خرید سریع و روان.</p><span class="chip">Online Store</span><span class="chip">Live</span></div><a class="btn" href="https://savyron.github.io/Kuhbanan/" target="_blank" rel="noopener">مشاهده سایت ↗</a></div></div>
+</section>
+
+<section id="goal">
+<div class="goal rv">
+<span class="tag">OUR GOAL</span><h2>هدف ما</h2>
+<p class="lead" style="margin-bottom:0">هدف Savyron Team فقط ساخت چند وب‌سایت نیست؛ می‌خواهیم مجموعه‌ای از پروژه‌های مفید، خلاقانه و قابل‌اعتماد ایجاد کنیم، مهارت‌هایمان را توسعه دهیم و در آینده کارهای بزرگ‌تری انجام دهیم.</p>
+<strong>مسیر ما تازه شروع شده است.</strong>
+</div>
+</section>
+
+<section id="founder">
+<div class="rv"><span class="tag">FOUNDER</span><h2>درباره بنیان‌گذار</h2></div>
+<div class="fo rv" style="margin-top:26px">
+<div class="pf"><div><svg viewBox="0 0 100 100"><defs><linearGradient id="ag1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><circle cx="50" cy="40" r="19" fill="url(#ag1)"/><path d="M12 100c0-22 17-34 38-34s38 12 38 34z" fill="url(#ag1)" opacity=".85"/></svg></div></div>
+<div class="tx"><div class="nm">سامیار سیفی</div>
+<p>من، بنیان‌گذار Savyron Team، فعالیت خود را با علاقه به دنیای فناوری و ساخت وب‌سایت آغاز کردم. هدفم این است که با کسب تجربه، یادگیری مداوم و اجرای ایده‌های جدید، پروژه‌هایی باکیفیت‌تر و حرفه‌ای‌تر بسازم.</p></div>
+</div>
+</section>
+
+<footer>© Savyron Team — مسیر ما تازه شروع شده است</footer>
+
+<div class="modal" id="m"><div class="box"><button class="x" id="cl" aria-label="بستن">×</button>
+<div class="pf"><div><svg viewBox="0 0 100 100"><defs><linearGradient id="ag2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><circle cx="50" cy="40" r="19" fill="url(#ag2)"/><path d="M12 100c0-22 17-34 38-34s38 12 38 34z" fill="url(#ag2)" opacity=".85"/></svg></div></div><h3 id="mr"></h3><p id="md" style="color:var(--mut);font-size:14px"></p>
+<div class="slot">@ID — به‌زودی</div><div class="slot">link — به‌زودی</div></div></div>
+
+<script>
+document.documentElement.classList.add('js');
+var m=document.getElementById('m');
+document.querySelectorAll('.card').forEach(function(c){
+ c.onclick=function(){document.getElementById('mr').textContent=c.dataset.r;document.getElementById('md').textContent=c.dataset.d;m.classList.add('on')};
+ c.onmousemove=function(e){var r=c.getBoundingClientRect();c.style.setProperty('--x',(e.clientX-r.left)+'px');c.style.setProperty('--y',(e.clientY-r.top)+'px')};
+});
+document.getElementById('cl').onclick=function(){m.classList.remove('on')};
+m.onclick=function(e){if(e.target===m)m.classList.remove('on')};
+document.addEventListener('keydown',function(e){if(e.key==='Escape')m.classList.remove('on')});
+var rv=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){
+ var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}})},{threshold:.12});
+ rv.forEach(function(el,i){el.style.transitionDelay=(i%4)*70+'ms';o.observe(el)});
+}else{rv.forEach(function(el){el.classList.add('in')})}
+var links=document.querySelectorAll('.nav a');
+var secs=['home','about','projects','goal','founder'].map(function(id){return document.getElementById(id)});
+function spy(){var y=window.scrollY+160,cur=0;secs.forEach(function(s,i){if(s.offsetTop<=y)cur=i});links.forEach(function(a,i){a.classList.toggle('on',i===cur)})}
+window.addEventListener('scroll',spy,{passive:true});spy();
+</script>
+</body>
+</html>
